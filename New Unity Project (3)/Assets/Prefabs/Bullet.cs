@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour
     public GameObject Player;//�÷��̾� ������Ʈ�� �̱������� ������
 
     public float BulletSpeed = 10f;
+    public float DestroyTime;//���� �ð� �� �ı��� �ð�
+
+    public bool isCanHitPlayer = false;//�÷��̾ �߻��ϸ� �÷��̾� ���� �Ұ�, �ݻ�ǰų� ���� �߻��ϸ� �÷��̾� ���� ����
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +19,12 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        a();
+        bulletmove();
     }
-
-    void a()
+    void bulletmove()
     {
         this.transform.Translate(Vector3.forward * BulletSpeed * Time.deltaTime);
     }
-
     private void OnTriggerEnter(Collider other)
     {//�Ѿ��� ���� �� ȣ��
         if (other.transform.tag == "Wall")
@@ -43,5 +44,15 @@ public class Bullet : MonoBehaviour
             }//���̸� ���� �߷� ����
             Destroy(this.gameObject);
         }//�Ѿ� �⵹ �� �Ѿ� ����
+        else if (isCanHitPlayer && other.transform.tag == "Player")//�÷��̾� ���� ���� �� �÷��̾� ���˽� ����
+        {
+            GravityObject.instance.GravityCtrl();//���� ��ü�� �÷��̾�� �켱 �� �߷� ����
+            GameObject[] Enemys = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < Enemys.Length; i++)
+            {
+                Enemys[i].GetComponent<Enemy>().Enemy_isReversed = !Enemys[i].GetComponent<Enemy>().Enemy_isReversed;//���� �ٽ� �������Ѽ� �÷��̾ �����ǰ� ��
+            }
+            Destroy(this.gameObject);
+        }
     }
 }

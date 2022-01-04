@@ -40,8 +40,8 @@ public class PlayerLook : MonoBehaviour
 
         
             if (GravityObject.instance.isReversed) {
-                cam.transform.rotation = Quaternion.Euler(xRotation * -1, yRotation * -1, wallRun.tilt + 180);
-                orientation.transform.rotation = Quaternion.Euler(0, yRotation * -1, 180);
+                cam.transform.rotation = Quaternion.Euler(xRotation * -1, (yRotation * -1) + 180, wallRun.tilt + 180);
+                orientation.transform.rotation = Quaternion.Euler(xRotation * -1, (yRotation * -1) + 180, 180);
             }
             else {
                 cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, wallRun.tilt);

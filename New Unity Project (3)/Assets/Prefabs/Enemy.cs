@@ -19,24 +19,24 @@ public class Enemy : MonoBehaviour
     }
     public void EnemyReverse()
     {
-        if (!GravityObject.instance.isReversed)//О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫
+        if (!GravityObject.instance.isReversed)//╦йюл ╣заЩ╬На╝ южаЖ ╬йю╩ ╤╖
         {
-            if (!Enemy_isReversed)//О©╫О©╫(О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝)О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫
+            if (!Enemy_isReversed)//юШ(юл ©ю╨Йа╖ф╝)юл ╣заЩ╬На╝ южаЖ ╬йю╩ ╤╖
             {
                 Enemy_ConstantForce.force = new Vector3(0, 0, 0);
             }
-            else//О©╫О©╫(О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝)О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫
+            else//юШ(юл ©ю╨Йа╖ф╝)юл ╣заЩ╬На╝ южю╩ ╤╖
             {
                 Enemy_ConstantForce.force = new Vector3(0, 19.6f, 0);
             }
         }
-        else//О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫
+        else//╦йюл ╣заЩ╬На╝ южю╩ ╤╖
         {
-            if (!Enemy_isReversed)//О©╫О©╫(О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝)О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫
+            if (!Enemy_isReversed)//юШ(юл ©ю╨Йа╖ф╝)юл ╣заЩ╬На╝ южаЖ ╬йю╩ ╤╖
             {
                 Enemy_ConstantForce.force = new Vector3(0, 0, 0);
             }
-            else//О©╫О©╫(О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝)О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫
+            else//юШ(юл ©ю╨Йа╖ф╝)юл ╣заЩ╬На╝ южю╩ ╤╖
             {
                 Enemy_ConstantForce.force = new Vector3(0, -19.6f, 0);
             }
