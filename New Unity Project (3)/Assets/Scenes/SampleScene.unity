@@ -1600,8 +1600,8 @@ MonoBehaviour:
   wallRunGravity: 3
   wallRunJumpForce: 6
   cam: {fileID: 7228893181730178584}
-  fov: 90
-  wallRunfov: 100
+  fov: 50
+  wallRunfov: 70
   wallRunfovTime: 10
   camTilt: 10
   camTiltTime: 10
